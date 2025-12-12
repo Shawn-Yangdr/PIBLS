@@ -1,0 +1,23 @@
+# TC1
+# Equation: u'' + u = 0, domain [0, 1]
+# Boundary: u(0) = 0, u(1) = sin(1)
+
+problem: "TC1"
+
+model:
+  num_feature: 60
+  num_enhancement: 20
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 15.1
+  feature_hidden_dim: 20
+  enhancement_hidden_dim: 2
+  bls_enhance_whiten: false
+
+training:
+  n_colloc: 900
+  n_bc: 2
+  n_init: 0
+  seed: 3407
+  visualize: true
+  save_model: true

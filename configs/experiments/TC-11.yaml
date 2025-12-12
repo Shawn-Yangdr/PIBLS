@@ -1,0 +1,23 @@
+# TC11
+# Equation: u_t + u*u_x - v*u_xx = R, (x,t) in (0,1)x(0,0.25), v=0.01
+# Exact: u = (1+x/10)(1+t/10)[2cos(πx+2π/5)+1.5cos(2πx-3π/5)][2cos(πt+2π/5)+1.5cos(2πt-3π/5)]
+
+problem: "TC11"
+
+model:
+  num_feature: 5
+  num_enhancement: 40
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 1.1
+  feature_hidden_dim: 3
+  enhancement_hidden_dim: 10
+  bls_enhance_whiten: true
+
+training:
+  n_colloc: 1300
+  n_bc: 800
+  n_init: 800
+  seed: 3407
+  visualize: true
+  save_model: true

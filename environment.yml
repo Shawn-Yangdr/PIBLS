@@ -1,0 +1,14 @@
+name: PIBLS
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - pip
+  - pip:
+    - matplotlib==3.7.2
+    - numpy==1.24.3
+    - PyYAML==6.0.2
+    - scipy==1.10.1
+    - torch==2.4.1 --index-url https://download.pytorch.org/whl/cu124
+    - torchvision==0.19.1 --index-url https://download.pytorch.org/whl/cu124
+    - torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124

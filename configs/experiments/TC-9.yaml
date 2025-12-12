@@ -1,0 +1,23 @@
+# TC9
+# Equation: u_xx - λu + β*sin(u) = R, x in (0,8), λ=50, β=10
+# Exact: u = sin(3πx + 3π/20)*cos(4πx - 2π/5) + 1.5 + x/10
+
+problem: "TC9"
+
+model:
+  num_feature: 20
+  num_enhancement: 20
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 4.0
+  feature_hidden_dim: 10
+  enhancement_hidden_dim: 60
+  bls_enhance_whiten: false
+
+training:
+  n_colloc: 2800
+  n_bc: 1200
+  n_init: 0
+  seed: 3407
+  visualize: true
+  save_model: true

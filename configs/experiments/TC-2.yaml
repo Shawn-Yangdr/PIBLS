@@ -1,0 +1,23 @@
+# TC2
+# Equation: XXX
+# Boundary: XXX
+
+problem: "TC2"
+
+model:
+  num_feature: 10
+  num_enhancement: 4
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 3.9
+  feature_hidden_dim: 10
+  enhancement_hidden_dim: 10
+  bls_enhance_whiten: true
+
+training:
+  n_colloc: 100
+  n_bc: 2
+  n_init: 0
+  seed: 3407
+  visualize: true
+  save_model: true

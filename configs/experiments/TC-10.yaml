@@ -1,0 +1,24 @@
+# TC10
+# Equation: u_tt + ω²u + α*sin(u) = R, t in (0,2.5), ω=2, α=0.1
+# Exact: u = t*sin(t)
+# Initial: u(0) = 0, u'(0) = 0
+
+problem: "TC10"
+
+model:
+  num_feature: 50
+  num_enhancement: 10
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 15.5
+  feature_hidden_dim: 20
+  enhancement_hidden_dim: 10
+  bls_enhance_whiten: false
+
+training:
+  n_colloc: 1400
+  n_bc: 0
+  n_init: 1
+  seed: 42
+  visualize: true
+  save_model: true

@@ -1,0 +1,23 @@
+# TC4
+# Equation: a*u_x + b*u_y = R, (x, y) in (-1,1)x(-1,1), a=1, b=0.5
+# Exact: u = 0.5*cos(πx)*sin(πy)
+
+problem: "TC4"
+
+model:
+  num_feature: 40
+  num_enhancement: 2
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 3.3
+  feature_hidden_dim: 40
+  enhancement_hidden_dim: 3
+  bls_enhance_whiten: false
+
+training:
+  n_colloc: 2800
+  n_bc: 700
+  n_init: 0
+  seed: 3407
+  visualize: true
+  save_model: true

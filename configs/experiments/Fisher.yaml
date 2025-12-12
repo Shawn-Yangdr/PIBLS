@@ -1,0 +1,25 @@
+# Fisher-KPP 1000 - Cell migration problem with experimental data
+# Time-dependent Fisher-KPP equation with data-driven initial conditions
+# Uses external .mat file for initial condition measurements
+
+problem: "Fisher1000"
+
+model:
+  num_feature: 20
+  num_enhancement: 20
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 5.0
+  feature_hidden_dim: 10
+  enhancement_hidden_dim: 10
+  bls_enhance_whiten: false
+
+training:
+  n_colloc: 2000
+  n_bc: 800
+  n_init: 0
+  n_ic_data: 200
+  data_root: "./data"
+  seed: 42
+  visualize: true
+  save_model: true

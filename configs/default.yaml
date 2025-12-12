@@ -1,0 +1,49 @@
+# Default configuration for PIBLS experiments
+# Override these values in experiment-specific configs or via CLI
+
+# Problem to solve (see physics/benchmarks.py for options)
+problem: "TC1"
+
+# Model architecture configuration
+model:
+  num_feature: 40
+  num_enhancement: 40
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  feature_hidden_dim: "auto"  # "auto" uses input dimension
+  enhancement_hidden_dim: "auto"  # "auto" uses feature output dimension
+  dtype: "float64"
+  bls_random_range: 2.0
+  bls_enhance_whiten: true
+
+# Training configuration
+training:
+  # Point sampling
+  n_colloc: 200  # Interior collocation points
+  n_bc: 2        # Boundary condition points
+  n_init: 0      # Grid-based initial condition points
+  n_ic_data: 0   # External IC data points (for Fisher problems)
+  data_root: "./data"
+
+  # Preprocessing
+  normalize_input: true  # Normalize inputs to [-1, 1]
+
+  # Perturbed least squares optimization
+  delta: 0.5             # Perturbation magnitude
+  cost_threshold: 1.0e-3  # Convergence threshold
+  max_sub_iterations: 5  # Maximum perturbation iterations
+
+  # Reproducibility
+  seed: 3407
+
+  # Output settings
+  results_dir: "./results"
+  results_name: "experiment_results.csv"
+  dtype: "float64"
+
+  # Visualization
+  visualize: true          # Generate solution plots after training
+  points_verbose: false    # Visualize point distributions
+
+  # Model saving
+  save_model: true    # Save model after training

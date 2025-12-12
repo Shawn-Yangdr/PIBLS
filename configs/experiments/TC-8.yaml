@@ -1,0 +1,24 @@
+# TC8
+# Equation: u_t + a(x)*u_x = 0, (x, t) in (-1,1)x(0,0.5), a(x) = 1+x
+# Exact: u = sin(π((1+x)e^(-t) - 1))
+# Initial: u(x,0) = sin(πx)
+
+problem: "TC8"
+
+model:
+  num_feature: 20
+  num_enhancement: 20
+  feature_activation: "tanh"
+  enhancement_activation: "tanh"
+  bls_random_range: 2.1
+  feature_hidden_dim: 60
+  enhancement_hidden_dim: 5
+  bls_enhance_whiten: true
+
+training:
+  n_colloc: 1900
+  n_bc: 800
+  n_init: 200
+  seed: 3407
+  visualize: true
+  save_model: true
